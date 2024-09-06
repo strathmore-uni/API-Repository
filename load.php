@@ -1,16 +1,24 @@
 <?php
+function classAutoLoad($classname){
 
-require_once "menus/menus.php";
 
+$directories = ["contents", "layouts", "menus"];
+
+foreach($directories AS $dir)
+{
+    $filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . $dir .  DIRECTORY_SEPARATOR . $classname . ".php";
+    if(file_exists($filename) AND is_readable($filename)){
+        require_once $filename;
+    }
+}
+}
+spl_autoload_register('classAutoLoad');
+//Create instance of all classes
+$ObjLayouts = new layout();
 $ObjMenus = new menus();
-
-require_once "layouts/layout.php";  
-$ObjLayouts = new layouts();
-
-
+$ObjHeadings = new headings();
   
 ?>
-<h1>Today is Wednesday</h1>
 
 <?php
 
