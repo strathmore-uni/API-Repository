@@ -18,10 +18,32 @@ $ObjLayouts = new layout();
 $ObjMenus = new menus();
 $ObjHeadings = new headings();
 $ObjCont = new contents();
+
+
+require "includes/constants.php;
+require "includes/dbConnection.php;
   
+$conn = new dbConnection($DBTYPE, $HOSTNAME, $DBPORT, $HOSTUSER, $HOSTPASS, $DBNAME);
 ?>
 
 <?php
+
+/*<!-- print date("1");
+if(date("1")== "Friday"){
+    print "Yes";
+}else{
+    print "No";
+}
+
+print "<br>";
+switch (date("1")){
+    case 'Friday': print "Yes";
+    break;
+    case 'Monday': print "No";
+    break;
+} -->*/
+
+
 
 /*$arr = ["black", "white", "green", "red"];
 
@@ -46,4 +68,6 @@ if(file_exists("index.php")AND is_readable("index.php")){
         print "no";
     }*/
 
+
+    
 ?>
