@@ -19,14 +19,10 @@ $ObjMenus = new menus();
 $ObjHeadings = new headings();
 $ObjCont = new contents();
 
+require "includes/constants.php";
+require "includes/dbConnection.php";
 
-require "includes/constants.php;
-require "includes/dbConnection.php;
-  
-$conn = new dbConnection($DBTYPE, $HOSTNAME, $DBPORT, $HOSTUSER, $HOSTPASS, $DBNAME);
-?>
-
-<?php
+$conn = new dbConnection(DBTYPE, HOSTNAME, DBPORT, HOSTUSER, HOSTPASS,DBNAME);
 
 /*<!-- print date("1");
 if(date("1")== "Friday"){
