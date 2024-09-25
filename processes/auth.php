@@ -1,7 +1,9 @@
 <?php
 class auth{
-    public function signup($conn){
+    public function signup($conn,$ObjGlob){
         if(isset($_POST["signup"])){
+
+    $errors = array();
             $fullname = $_POST["fullname"];
             $email_address = $_POST["email_address"];
             $username = $_POST["username"];
@@ -13,7 +15,7 @@ class auth{
 // verify that the email has got the correct format
 
 if(!filter_var($email_address, FIKTER_VALIDATE_EMAIL)){
-    die('Wrong email address');
+    $errors{'email_format_err'} = 'Wrong email format';
 }
 // verify that the email domain is authorized (@strathmore.edu, @gmail.com, @yahoo.com, @mada.co.ke) and not (@yanky.net)
 // verify if the email alredy exists in the database
@@ -24,6 +26,8 @@ if(!filter_var($email_address, FIKTER_VALIDATE_EMAIL)){
 // Send email verification with an OTP (OTC)
 // Verify that the password is identical to the repeat passsword
 // verify that the password length is between 4 and 8 characters
+
+if(!count($errors)){ 
 
 
 
@@ -40,6 +44,10 @@ if(!filter_var($email_address, FIKTER_VALIDATE_EMAIL)){
             }else{
                 die($insert);
             }
+        }
+        }else{
+            $ObjGlob->setMsg('msg', 'Error(s)', 'Invalid');
+            $ObjGlob->setMsg('errors', $errors, 'Invalid');
         }
     }
 }

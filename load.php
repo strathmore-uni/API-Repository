@@ -18,6 +18,7 @@ function classAutoLoad($classname){
 }
 
 spl_autoload_register('classAutoLoad');
+$ObjGlob = new fncs();
 
 // Create instances of all classes
     $ObjLayouts = new layout();
@@ -31,4 +32,5 @@ spl_autoload_register('classAutoLoad');
 // Create process instances
 
    $ObjAuth = new auth();
-   $ObjAuth->signup($conn);
+   $ObjAuth->signup($conn, $ObjGlob);
+ 
