@@ -11,6 +11,10 @@ class auth{
 // Sanitize all inputs
 // verify that the fullname has only letters, space, dash, quotation
 // verify that the email has got the correct format
+
+if(!filter_var($email_address, FIKTER_VALIDATE_EMAIL)){
+    die('Wrong email address');
+}
 // verify that the email domain is authorized (@strathmore.edu, @gmail.com, @yahoo.com, @mada.co.ke) and not (@yanky.net)
 // verify if the email alredy exists in the database
 // verify if the username alredy exists in the database
