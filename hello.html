@@ -50,6 +50,29 @@
         console.log(45/15);
     </script>
 
+    <script>
+        function MyScript(){
+            document.getElementById('ics_D').innerHTML = 'This is my second js line';
+        }
+    </script>
+    <br>
+    <span id="ics_D" onclick="MyScript(5,9);">Next</span>
+    <br>
+
+    <script>
+        var age = 24;
+        let lastname = "Mike";
+        const db_name = 'ics_d';
+
+        document.write('I am ' + age + 'years old' + 'and my last name is ' + lastname +' , ');
+
+        if(age > 18){
+            document.write('I am an adult');
+        } else {
+            document.write('I am a child');  
+        }
+    </script>
+
 
 </body>
 </html>
