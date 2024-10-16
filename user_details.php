@@ -1,4 +1,17 @@
 <?php
+require "load.php";
+$ObjLayouts->heading();
+$ObjMenus->main_menu();
+    
+$Objdetails->displayUsers($conn);
+$ObjLayouts->footer();
+?>
+
+
+
+
+
+<?php
 
 class user_details{
     var $fname;

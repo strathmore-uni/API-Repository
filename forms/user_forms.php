@@ -1,4 +1,4 @@
-<?php
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\                                                                                   <?php
 class user_forms{
     public function sign_up_form($ObjGlob){
 ?>
@@ -7,9 +7,9 @@ class user_forms{
           <div class="h-100 p-5 text-bg-dark rounded-3">
             <h2>Sign Up</h2>
             <?php
-            print $ObjGlob->getMsg('msg');
-            $err = $ObjGlob->getMsg('errors');
-            ?>
+                   print $ObjGlob->getMsg('msg');
+            $err = $ObjGlob->getMsg('errors');?>
+           
             <form action="<?php print basename($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Fullname:</label>
@@ -33,6 +33,20 @@ class user_forms{
                     <input type="text" name="username" class="form-control form-control-lg" maxlength="50" id="username" placeholder="Enter your username" <?php print (isset($_SESSION["username"])) ? 'value="'.$_SESSION["username"].'"'  : ''; unset($_SESSION["username"]); ?> >
                     <?php print (isset($err['usernameExists_err'])) ? "<span class='invalid'>" . $err['usernameExists_err'] . "</span>" : '' ; ?>
                     <?php print (isset($err['usernameLetters_err'])) ? "<span class='invalid'>" . $err['usernameLetters_err'] . "</span>" : '' ; ?>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" name="password" class="form-control form-control-lg" maxlength="50" id="password" placeholder="Enter your password" <?php print (isset($_SESSION["password"])) ? 'value="'.$_SESSION["password"].'"'  : ''; unset($_SESSION["password"]); ?> >
+                    <?php print (isset($err['password_err'])) ? "<span class='invalid'>" . $err['passwoerd_err'] . "</span>" : '' ; ?>
+                    <?php print (isset($err['password_err'])) ? "<span class='invalid'>" . $err['password_err'] . "</span>" : '' ; ?>
+                </div>
+                <div class="mb-3">
+                    <label for="repeat_password" class="form-label">Repeat_password:</label>
+
+                                           
+                    <input type="password" name="repeat_password" class="form-control form-control-lg" maxlength="50" id="repeat_password" placeholder="Repeat your password" <?php print (isset($_SESSION["repeat_password"])) ? 'value="'.$_SESSION["repeat_password"].'"'  : ''; unset($_SESSION["repeat_password"]); ?> >
+                    <?php print (isset($err['repeat_password_err'])) ? "<span class='invalid'>" . $err['repeat_password_err'] . "</span>" : '' ; ?>
+                    <?php print (isset($err['repeat_password_err'])) ? "<span class='invalid'>" . $err['repeat_password_err'] . "</span>" : '' ; ?>
                 </div>
                 <button type="submit" name="signup" class="btn btn-primary">Submit</button>
               </form>
