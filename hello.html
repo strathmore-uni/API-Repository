@@ -9,13 +9,47 @@
     <script>
         document.write('Hello');
     </script>
+    <!--Possiibility 1-->
     <br>
+    <script>
+        document.write(54+32);
+    </script>
+
     <p id="ics"></p>
-    
+
 
     <script>
         document.getElementById('ics').innerHTML = 
         'This is my first JS';
+        document.getElementById('ics').style.fontSize = 
+        '18px';
+        document.getElementById('ics').style.display = 
+        'block';
+        /*document.getElementById('ics').style.display = 
+        'none';*/
     </script>
+
+    <button onclick="document.getElementById('MyImg').
+    src='bulb_on.jpg'">Turn on</button>
+
+
+
+    <button onclick="document.getElementById('MyImg').
+    src='bulb_off.jpg'">Turn off</button>
+
+    <img src="bulb_on.jpg" id="MyImg"
+    width="150px">
+<!--Possibility 3-->
+    <script>
+        window.alert('Connection Failed! ');
+    </script>
+<!--Possibility 4-->
+    <a href="#" onclick="return confirm('Are you sure?')">Delete</a>
+    <!--Possibility 5-->
+    <script>
+        console.log(45/15);
+    </script>
+
+
 </body>
 </html>
